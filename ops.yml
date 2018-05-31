@@ -1,0 +1,13 @@
+- hosts: all
+  tasks:
+  - name: Stop Redis
+    service: name=redis_6379 state=stopped
+    tags: stop_redis
+    
+  - name: Start Redis
+    service: name=redis_6379 state=started
+    tags: start_redis
+
+  - name: Restart Redis
+    service: name=redis_6379 state=restarted
+    tags: restart_redis
